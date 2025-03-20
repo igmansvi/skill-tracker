@@ -1,4 +1,3 @@
-import { key } from './config.js';
 // Navigation
 const sections = {
   generate: document.getElementById("generateSection"),
@@ -37,6 +36,7 @@ navButtons.results.addEventListener("click", () => showSection("results"));
 
 // API Interaction
 function generateContent(text) {
+  const key = "AIzaSyDdoFDdA4MB5UjKtXZOITwd2ZvOwLFaNKg";
   const options = {
     method: "POST",
     headers: {
