@@ -1,3 +1,4 @@
+import { key } from './config.js';
 // Navigation
 const sections = {
   generate: document.getElementById("generateSection"),
@@ -36,7 +37,6 @@ navButtons.results.addEventListener("click", () => showSection("results"));
 
 // API Interaction
 function generateContent(text) {
-  const api_key = "AIzaSyDdoFDdA4MB5UjKtXZOITwd2ZvOwLFaNKg";
   const options = {
     method: "POST",
     headers: {
@@ -56,7 +56,7 @@ function generateContent(text) {
   };
 
   return fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${api_key}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
     options
   )
     .then((response) => {
