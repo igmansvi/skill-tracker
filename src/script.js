@@ -36,7 +36,7 @@ navButtons.results.addEventListener("click", () => showSection("results"));
 
 // API Interaction
 function generateContent(text) {
-  const key = "AIzaSyDdoFDdA4MB5UjKtXZOITwd2ZvOwLFaNKg";
+  const key = "AIzaSyDC1gOde8dXDuQD-B2OKgCesr2uoDVl4tk";
   const options = {
     method: "POST",
     headers: {
