@@ -8,6 +8,8 @@ body {
 
 /* Navigation Tabs */
 .tab-btn {
+  position: relative;
+  overflow: hidden;
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
   color: white;
@@ -19,13 +21,33 @@ body {
   transition: background-color 0.2s;
 }
 
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
 .tab-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.tab-btn:hover::after {
+  width: 80%;
+}
+
 .tab-btn.active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   font-weight: 600;
+}
+
+.tab-btn.active::after {
+  width: 80%;
 }
 
 /* Content Sections */

@@ -26,15 +26,41 @@
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-    <nav
-        class="fixed w-full z-50 bg-gradient-to-r from-blue-600 to-indigo-600 text-white backdrop-blur-md bg-opacity-90 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Savvy AI</h1>
-            <div>
-                <button class="tab-btn active" data-tab="home">Home</button>
-                <button class="tab-btn" data-tab="generate">Generate Test</button>
-                <button class="tab-btn" data-tab="take">Take Test</button>
-                <button class="tab-btn" data-tab="dashboard">Dashboard</button>
+    <nav class="fixed w-full z-50 text-white">
+        <!-- Glass background effect for nav -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-90 backdrop-blur-md"></div>
+
+        <div class="container mx-auto py-4 px-6 relative z-10">
+            <div class="flex justify-between items-center">
+                <!-- Logo with glass effect -->
+                <h1 class="text-2xl font-bold flex items-center">
+                    <i class="fa-solid fa-robot mr-2"></i>
+                    <span class="tracking-wide">Savvy AI</span>
+                </h1>
+
+                <!-- Navigation buttons with consistent glass effect -->
+                <div class="flex gap-4">
+                    <button
+                        class="tab-btn transition-all duration-300 px-6 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 active:scale-95"
+                        data-tab="home">
+                        <i class="fa-solid fa-home mr-2"></i>Home
+                    </button>
+                    <button
+                        class="tab-btn transition-all duration-300 px-6 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 active:scale-95"
+                        data-tab="generate">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generate Test
+                    </button>
+                    <button
+                        class="tab-btn transition-all duration-300 px-6 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 active:scale-95"
+                        data-tab="take">
+                        <i class="fa-solid fa-pen-to-square mr-2"></i>Take Test
+                    </button>
+                    <button
+                        class="tab-btn transition-all duration-300 px-6 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 active:scale-95"
+                        data-tab="dashboard">
+                        <i class="fa-solid fa-chart-simple mr-2"></i>Dashboard
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
