@@ -120,3 +120,66 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Modern UI Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.shadow-hover {
+  transition: all 0.3s ease;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-delay-1 {
+  animation-delay: 1s;
+}
+.animate-delay-2 {
+  animation-delay: 2s;
+}
+.animate-delay-3 {
+  animation-delay: 3s;
+}
+.animate-delay-4 {
+  animation-delay: 4s;
+}
+
+/* Group Hover Effects */
+.group:hover i {
+  transform: translateX(8px);
+}
