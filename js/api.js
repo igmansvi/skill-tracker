@@ -90,7 +90,7 @@ const API = {
     const { category, score, wrongAnswers, userType } = results;
 
     const prompt = `Based on a ${userType}'s performance on a ${category} test with a score of ${score}%, 
-        generate personalized recommendations for improvement. They struggled with the following concepts: 
+        generate personalized professional recommendations for improvement. They struggled with the following concepts: 
         ${wrongAnswers.join(", ")}.
         
         Format your response as JSON with the following structure:

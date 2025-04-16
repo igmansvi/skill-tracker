@@ -503,40 +503,85 @@ const TestTaker = {
    * @returns {string} - Formatted HTML
    */
   formatRecommendations(recs) {
+    // Create skill level indicator
+    const skillLevelPercentage = {
+      beginner: 33,
+      intermediate: 66,
+      advanced: 100,
+    };
+
+    const skillLevel = recs.skillLevel.toLowerCase();
+    const levelPercentage = skillLevelPercentage[skillLevel] || 50;
+
     let html = `
-            <div class="mb-4">
-                <h5 class="font-semibold">Strengths:</h5>
-                <ul class="list-disc pl-5">
-                    ${recs.strengths.map((s) => `<li>${s}</li>`).join("")}
-                </ul>
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-2">
+          <h5 class="font-semibold text-gray-800">Skill Proficiency Level:</h5>
+          <span class="text-sm font-medium capitalize text-blue-700">${
+            recs.skillLevel
+          }</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-blue-600 h-2.5 rounded-full" style="width: ${levelPercentage}%"></div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+          <h5 class="font-semibold text-green-800 flex items-center mb-3">
+            <i class="fa-solid fa-circle-check mr-2"></i>
+            Strengths
+          </h5>
+          <ul class="list-disc pl-5 space-y-1.5 text-green-800">
+            ${recs.strengths.map((s) => `<li>${s}</li>`).join("")}
+          </ul>
+        </div>
+        
+        <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
+          <h5 class="font-semibold text-amber-800 flex items-center mb-3">
+            <i class="fa-solid fa-triangle-exclamation mr-2"></i>
+            Areas for Improvement
+          </h5>
+          <ul class="list-disc pl-5 space-y-1.5 text-amber-800">
+            ${recs.weaknesses.map((w) => `<li>${w}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
+        <h5 class="font-semibold text-blue-800 flex items-center mb-3">
+          <i class="fa-solid fa-lightbulb mr-2"></i>
+          Professional Development Plan
+        </h5>
+        <ol class="list-decimal pl-5 space-y-2 text-blue-800">
+          ${recs.recommendations
+            .map((r) => `<li class="pb-2">${r}</li>`)
+            .join("")}
+        </ol>
+      </div>
+      
+      <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+        <h5 class="font-semibold text-indigo-800 flex items-center mb-3">
+          <i class="fa-solid fa-book mr-2"></i>
+          Recommended Resources
+        </h5>
+        <div class="space-y-3">
+          ${recs.resources
+            .map(
+              (r) => `
+            <div class="resource-item border-l-4 border-indigo-300 pl-3 py-1">
+              <h6 class="font-medium text-indigo-900">${r.title}</h6>
+              <div class="flex items-center text-xs text-indigo-600 mb-1">
+                <span class="bg-indigo-100 rounded px-2 py-0.5">${r.type}</span>
+              </div>
+              <p class="text-indigo-800 text-sm">${r.description}</p>
             </div>
-            
-            <div class="mb-4">
-                <h5 class="font-semibold">Areas for Improvement:</h5>
-                <ul class="list-disc pl-5">
-                    ${recs.weaknesses.map((w) => `<li>${w}</li>`).join("")}
-                </ul>
-            </div>
-            
-            <div class="mb-4">
-                <h5 class="font-semibold">Recommendations:</h5>
-                <ul class="list-disc pl-5">
-                    ${recs.recommendations.map((r) => `<li>${r}</li>`).join("")}
-                </ul>
-            </div>
-            
-            <div>
-                <h5 class="font-semibold">Suggested Resources:</h5>
-                <ul class="list-disc pl-5">
-                    ${recs.resources
-                      .map(
-                        (r) =>
-                          `<li><strong>${r.title}</strong> (${r.type}): ${r.description}</li>`
-                      )
-                      .join("")}
-                </ul>
-            </div>
-        `;
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
 
     return html;
   },
