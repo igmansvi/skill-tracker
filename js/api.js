@@ -55,12 +55,11 @@ const API = {
     const prompt = `Generate a JSON array containing ${questionCount} ${difficulty} level ${category} questions for a ${userType}. 
         
         For multiple choice questions, include 4 options with exactly one correct answer marked.
-        For reading questions, include a passage followed by questions.
         For writing questions, include instructions and evaluation criteria.
         
         Format your output as valid JSON.
-        Each question should have: id, type (multiple_choice, text_input, or reading), question_text, options (for multiple choice), 
-        correct_answer (for multiple choice), passage (for reading), and criteria (for writing).
+        Each question should have: id, type (multiple_choice, text_input), question_text, options (for multiple choice), 
+        correct_answer (for multiple choice) and criteria (for writing).
 
         Output ONLY valid JSON with no additional text or explanation.`;
 

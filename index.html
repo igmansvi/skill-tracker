@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savvy AI Skill Tracker</title>
+    <title>Savvy AI - Skill Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -201,21 +201,24 @@
 
         <!-- Generate Test Tab -->
         <div id="generate" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-6">Generate a Test</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6 transform transition-all duration-500 hover:text-blue-600">Generate a
+                Test</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                 <form id="generate-form" class="space-y-4">
-                    <div>
-                        <label class="block mb-2">User Type</label>
-                        <select id="user-type" class="w-full border rounded p-2">
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">User Type</label>
+                        <select id="user-type"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                             <option value="student">Student</option>
                             <option value="professional">Professional</option>
                             <option value="general">General</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label class="block mb-2">Test Category</label>
-                        <select id="test-category" class="w-full border rounded p-2">
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">Test Category</label>
+                        <select id="test-category"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                             <option value="aptitude">Aptitude</option>
                             <option value="reading">Reading Skills</option>
                             <option value="writing">Writing Skills</option>
@@ -223,52 +226,64 @@
                         </select>
                     </div>
 
-                    <div>
-                        <label class="block mb-2">Difficulty Level</label>
-                        <select id="difficulty" class="w-full border rounded p-2">
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">Difficulty Level</label>
+                        <select id="difficulty"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
                             <option value="hard">Hard</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label class="block mb-2">Number of Questions</label>
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">Number of Questions</label>
                         <input type="number" id="question-count" min="5" max="20" value="10"
-                            class="w-full border rounded p-2">
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                     </div>
 
-                    <div>
+                    <div class="pt-2">
                         <button type="submit"
-                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Generate Test</button>
+                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95">
+                            <span class="flex items-center">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>
+                                Generate Test
+                            </span>
+                        </button>
                     </div>
                 </form>
             </div>
 
-            <div id="generation-result" class="mt-6 hidden">
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+            <div id="generation-result" class="mt-6 hidden transform transition-all duration-500 animate-fade-in-down">
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative">
                     <strong class="font-bold">Success!</strong>
                     <span class="block sm:inline"> Your test has been generated.</span>
                 </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md mt-4">
-                <h3 class="text-xl font-semibold mb-3">Test Details</h3>
-                <div id="test-details" class="space-y-2"></div>
+            <div class="bg-white p-6 rounded-lg shadow-md mt-4 hover:shadow-xl transition-all duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">Test Details</h3>
+                <div id="test-details" class="space-y-2 transform transition-all duration-300"></div>
                 <button id="take-generated-test"
-                    class="mt-4 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Take This Test</button>
+                    class="mt-4 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95 flex items-center">
+                    <i class="fa-solid fa-play mr-2"></i>
+                    Take This Test
+                </button>
             </div>
         </div>
 
         <!-- Take Test Tab -->
         <div id="take" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-6">Take a Test</h2>
-            <div id="test-selection" class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold mb-3">Select a Test</h3>
+            <h2 class="text-3xl font-bold mb-6 transform transition-all duration-500 hover:text-blue-600">Take a Test
+            </h2>
+            <div id="test-selection"
+                class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">Select a Test</h3>
                 <div class="space-y-4">
-                    <div>
-                        <label class="block mb-2">Test Category</label>
-                        <select id="take-test-category" class="w-full border rounded p-2">
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">Test Category</label>
+                        <select id="take-test-category"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                             <option value="aptitude">Aptitude</option>
                             <option value="reading">Reading Skills</option>
                             <option value="writing">Writing Skills</option>
@@ -276,9 +291,10 @@
                         </select>
                     </div>
 
-                    <div>
-                        <label class="block mb-2">Difficulty Level</label>
-                        <select id="take-difficulty" class="w-full border rounded p-2">
+                    <div class="transform transition-all duration-300 hover:scale-[1.01]">
+                        <label class="block mb-2 font-medium">Difficulty Level</label>
+                        <select id="take-difficulty"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
                             <option value="hard">Hard</option>
@@ -287,87 +303,126 @@
 
                     <div>
                         <button id="start-test"
-                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Start Test</button>
+                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95 flex items-center">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>
+                            Start Test
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div id="test-container" class="mt-6 hidden">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+            <div id="test-container" class="mt-6 hidden transform transition-all duration-500 animate-fade-in-down">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 id="test-title" class="text-xl font-semibold"></h3>
-                        <div id="test-timer" class="text-lg font-medium"></div>
+                        <h3 id="test-title" class="text-xl font-semibold text-blue-600"></h3>
+                        <div id="test-timer" class="text-lg font-medium px-4 py-2 bg-blue-50 rounded-lg text-blue-600">
+                        </div>
                     </div>
 
-                    <div id="test-progress" class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                        <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    <div id="test-progress" class="w-full bg-gray-200 rounded-full h-2.5 mb-4 overflow-hidden">
+                        <div id="progress-bar"
+                            class="bg-blue-600 h-2.5 rounded-full transition-all duration-700 ease-out"
+                            style="width: 0%"></div>
                     </div>
 
-                    <div id="question-container" class="mb-6">
+                    <div id="question-container"
+                        class="mb-6 p-4 bg-blue-50 bg-opacity-50 rounded-lg transform transition-all duration-300">
                         <!-- Questions will be populated here -->
                     </div>
 
                     <div class="flex justify-between">
                         <button id="prev-question"
-                            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400">Previous</button>
+                            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition-all duration-300 active:scale-95 flex items-center">
+                            <i class="fa-solid fa-arrow-left mr-2"></i>
+                            Previous
+                        </button>
                         <button id="next-question"
-                            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400">Next</button>
+                            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition-all duration-300 active:scale-95 flex items-center">
+                            Next
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
                         <button id="submit-test"
-                            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 hidden">Submit
-                            Test</button>
+                            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95 flex items-center">
+                            <i class="fa-solid fa-check mr-2"></i>
+                            Submit Test
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div id="test-result" class="mt-6 hidden">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3">Test Results</h3>
-                    <div id="score-display" class="text-center py-4">
-                        <div id="score-percentage" class="text-5xl font-bold"></div>
-                        <div class="text-lg mt-2">Your Score</div>
+            <div id="test-result" class="mt-6 hidden transform transition-all duration-500 animate-fade-in-down">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600">Test Results</h3>
+
+                    <div id="score-display" class="text-center py-6 transform transition-all duration-500">
+                        <div
+                            class="inline-flex items-center justify-center rounded-full bg-blue-50 p-8 mb-2 ring-2 ring-blue-100">
+                            <div id="score-percentage" class="text-5xl font-bold text-blue-600"></div>
+                        </div>
+                        <div class="text-lg mt-2 text-gray-600">Your Score</div>
                     </div>
 
-                    <div id="skill-level" class="mb-4"></div>
+                    <div id="skill-level"
+                        class="mb-4 p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-gray-100"></div>
 
                     <div id="recommendations" class="mt-6">
-                        <h4 class="font-semibold mb-2">AI Recommendations</h4>
-                        <div id="recommendation-text" class="p-4 bg-gray-50 rounded"></div>
+                        <h4 class="font-semibold mb-2 flex items-center text-blue-600">
+                            <i class="fa-solid fa-lightbulb mr-2"></i>
+                            AI Recommendations
+                        </h4>
+                        <div id="recommendation-text"
+                            class="p-4 bg-blue-50 rounded-lg transition-all duration-300 hover:bg-blue-100"></div>
                     </div>
 
                     <button id="view-dashboard"
-                        class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">View
-                        Dashboard</button>
+                        class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95 flex items-center mx-auto">
+                        <i class="fa-solid fa-chart-simple mr-2"></i>
+                        View Dashboard
+                    </button>
                 </div>
             </div>
         </div>
 
         <!-- Dashboard Tab -->
         <div id="dashboard" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-6">Your Progress Dashboard</h2>
+            <h2 class="text-3xl font-bold mb-6 transform transition-all duration-500 hover:text-blue-600">Your Progress
+                Dashboard</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3">Skill Overview</h3>
-                    <div id="skills-chart" class="h-64">
+                <div
+                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600 flex items-center">
+                        <i class="fa-solid fa-chart-pie mr-2"></i>
+                        Skill Overview
+                    </h3>
+                    <div id="skills-chart" class="h-64 transition-all duration-500">
                         <!-- Chart will be rendered here -->
                         <p class="text-center text-gray-500 py-16">Select a category to see your skills chart</p>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3">Progress Over Time</h3>
-                    <div id="progress-chart" class="h-64">
+                <div
+                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600 flex items-center">
+                        <i class="fa-solid fa-chart-line mr-2"></i>
+                        Progress Over Time
+                    </h3>
+                    <div id="progress-chart" class="h-64 transition-all duration-500">
                         <!-- Chart will be rendered here -->
                         <p class="text-center text-gray-500 py-16">Complete more tests to see your progress</p>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md md:col-span-2">
-                    <h3 class="text-xl font-semibold mb-3">Recent Tests</h3>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 md:col-span-2">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600 flex items-center">
+                        <i class="fa-solid fa-list-check mr-2"></i>
+                        Recent Tests
+                    </h3>
                     <div id="recent-tests" class="overflow-x-auto">
                         <table class="min-w-full">
                             <thead>
-                                <tr class="bg-gray-100">
+                                <tr class="bg-blue-50">
                                     <th class="px-6 py-3 text-left">Date</th>
                                     <th class="px-6 py-3 text-left">Category</th>
                                     <th class="px-6 py-3 text-left">Difficulty</th>
@@ -375,7 +430,7 @@
                                     <th class="px-6 py-3 text-left">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="tests-table">
+                            <tbody id="tests-table" class="divide-y divide-gray-200">
                                 <!-- Test history will be populated here -->
                                 <tr>
                                     <td colspan="5" class="px-6 py-4 text-center text-gray-500">No test history
@@ -386,9 +441,14 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md md:col-span-2">
-                    <h3 class="text-xl font-semibold mb-3">Skill Development Recommendations</h3>
-                    <div id="ai-recommendations" class="p-4 bg-gray-50 rounded">
+                <div
+                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 md:col-span-2">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600 flex items-center">
+                        <i class="fa-solid fa-graduation-cap mr-2"></i>
+                        Skill Development Recommendations
+                    </h3>
+                    <div id="ai-recommendations"
+                        class="p-4 bg-blue-50 rounded-lg transition-all duration-300 hover:bg-blue-100">
                         <!-- AI recommendations will be displayed here -->
                         <p class="text-gray-500">Complete more tests to receive personalized recommendations</p>
                     </div>
