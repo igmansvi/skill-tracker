@@ -497,6 +497,31 @@
     <script src="js/test-taker.js"></script>
     <script src="js/test-generator.js"></script>
     <script src="js/api.js"></script>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="chatbot-box" id="chatbot-box">
+            <div class="chatbot-header">
+                <h3> <i class="fa-solid fa-robot"></i> Savvo BOT</h3>
+                <button id="close-chatbot"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    <p>Hi there! I'm your AI skill evaluation assistant. Ask me anything about your skills or how to
+                        improve them.</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Type your question here...">
+                <button id="chatbot-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chatbot.js"></script>
 </body>
 
 </html>
