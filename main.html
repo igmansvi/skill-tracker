@@ -38,6 +38,27 @@
                     <span class="tracking-wide">Savvy AI</span>
                 </h1>
 
+                <div class="flex items-center">
+                    <!-- User profile section -->
+                    <div class="mr-6 flex items-center" id="user-profile">
+                        <span class="text-sm mr-2">Welcome, <span id="user-name">User</span></span>
+                        <div class="relative">
+                            <button id="profile-dropdown-toggle" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-100 transition-colors">
+                                <i class="fa-solid fa-user"></i>
+                            </button>
+                            <div id="profile-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden z-50">
+                                <div class="py-1">
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">
+                                        <i class="fa-solid fa-user-gear mr-2"></i> Profile Settings
+                                    </a>
+                                    <button id="logout-btn" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-100">
+                                        <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Navigation buttons with consistent glass effect -->
                     <div class="flex gap-4">
                         <button
@@ -60,26 +81,6 @@
                             data-tab="dashboard">
                             <i class="fa-solid fa-chart-simple mr-2"></i>Dashboard
                         </button>
-                        <div class="flex items-center">
-                            <!-- User profile section -->
-                            <div class="mr-6 flex items-center" id="user-profile">
-                                <span class="text-sm mr-2">Welcome, <span id="user-name">User</span></span>
-                                <div class="relative">
-                                    <button id="profile-dropdown-toggle" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-100 transition-colors">
-                                        <i class="fa-solid fa-user"></i>
-                                    </button>
-                                    <div id="profile-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden z-50">
-                                        <div class="py-1">
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">
-                                                <i class="fa-solid fa-user-gear mr-2"></i> Profile Settings
-                                            </a>
-                                            <button id="logout-btn" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-100">
-                                                <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                     </div>
                 </div>
             </div>
